@@ -1,20 +1,21 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, query, orderBy, limit } from 'firebase/firestore';
+import { getDatabase, ref, get, child, query, orderByKey, limitToLast } from 'firebase/database';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD4f1m9vRoe0o0WbKDC3l4b496lHQcgs8w",
-  authDomain: "api-handtalk-5a459.firebaseapp.com",
-  projectId: "api-handtalk-5a459",
-  storageBucket: "api-handtalk-5a459.appspot.com",
-  messagingSenderId: "399915628166",
-  appId: "1:399915628166:web:d3ccf817c7fac17a3e8307",
-  measurementId: "G-NY7C72E67D"
+  apiKey: "AIzaSyDHbJBf31aCwILQhxlGr-WQxiIAVySnWOI",
+  authDomain: "handtalk-b4705.firebaseapp.com",
+  databaseURL: "https://handtalk-b4705-default-rtdb.firebaseio.com",
+  projectId: "handtalk-b4705",
+  storageBucket: "handtalk-b4705.appspot.com",
+  messagingSenderId: "436378470850",
+  appId: "1:436378470850:web:1cdebe664045fdddaeee5b",
+  measurementId: "G-TV1FPN1H03"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 // Get a reference to the Firestore service
-const firestore = getFirestore(app);
+const database = getDatabase(app);
 
-export { firestore };
+export { database };
