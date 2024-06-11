@@ -1,6 +1,6 @@
 declare global {
     interface Window {
-      DataExtractor: any;
+      DataExtractor: typeof DataExtractor;
     }
   }
   

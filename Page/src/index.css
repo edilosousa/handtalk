@@ -1,3 +1,10 @@
 body {
   transition: background-color 0.3s, color 0.3s;
 }
+
+.full-height-section {
+  height: 100%; /* 100% da altura da viewport */
+  overflow-y: auto; /* Adiciona uma barra de rolagem vertical se o conteúdo ultrapassar a altura da viewport */
+  /* margin-bottom: -8%; */
+}
+
