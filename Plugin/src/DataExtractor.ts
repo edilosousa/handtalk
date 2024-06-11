@@ -4,6 +4,7 @@ import { sendToAPI } from './api';
 export class DataExtractor {
   private observers: Observer[] = [];
   private themeChangeCount: number = 0;
+  private themeChangeCallback: () => void = () => {};
 
   constructor() {
     this.monitorThemeChanges();
@@ -11,6 +12,10 @@ export class DataExtractor {
 
   public addObserver(observer: Observer): void {
     this.observers.push(observer);
+  }
+
+  public setThemeChangeCallback(callback: () => void): void {
+    this.themeChangeCallback = callback;
   }
 
   public extractData(): void {
@@ -51,6 +56,7 @@ export class DataExtractor {
       const newTheme = this.getTheme();
       if (newTheme !== currentTheme) {
         this.themeChangeCount++;
+        this.themeChangeCallback(); // Chama a função de retorno de chamada
         currentTheme = newTheme;
       }
     });

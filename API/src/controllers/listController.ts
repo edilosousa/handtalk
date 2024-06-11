@@ -3,6 +3,17 @@ import { Request, Response } from 'express';
 import { database  } from '../services/firebaseService';
 import { getDatabase, ref, query, orderByKey, limitToLast, get } from 'firebase/database';
 
+/**
+ * @swagger
+ * /list:
+ *   get:
+ *     summary: Endpoint para listar dados.
+ *     description: Retorna uma lista de dados.
+ *     responses:
+ *       200:
+ *         description: Lista de dados retornada com sucesso.
+ */
+
 
 export const listData = async (req: Request, res: Response) => {
   try {
